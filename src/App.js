@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Grid from "@mui/material/Grid";
+import React, { useState, useRef, useEffect } from "react";
+
+
+import customData from "./data.json"
+import MediaCard from "./Componnets/CardComponent";
+import InputComponent from "./Componnets/InputComponent";
 
 function App() {
+  const [data, setDate] = React.useState(customData)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid container>
+      <MediaCard />
+      <MediaCard />
+      <MediaCard />
+      <InputComponent />
+    </Grid>
   );
 }
 
